@@ -138,7 +138,7 @@
     }
     .game-images img {
       width: 100%;
-      height: 350px; /* Increased height */
+      height: 350px;
       object-fit: cover;
       border-radius: 8px;
       border: 2px solid #00f;
@@ -169,7 +169,7 @@
   <canvas id="starfield"></canvas>
   <div class="neon-text">Free Unblocked Games</div>
   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search...">
+    <input type="text" id="searchInput" placeholder="Search games...">
     <button onclick="searchElite()" class="mindfind">
       <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
@@ -179,7 +179,7 @@
   
   <!-- Contact Us, Form, Discord buttons -->
   <div class="button-container">
-    <button class="btn" onclick="window.open('jacksonplayzskibidiriss.github.io/contact_us', '_blank')">Contact Us</button>
+    <button class="btn" onclick="window.open('https://freeunblockedgames2.github.io/contact_us', '_blank')">Contact Us</button>
     <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true', '_blank')">Form</button>
     <button class="btn" onclick="window.open('https://discord.gg/xFMpuKBFr8', '_blank')">Join Our Discord</button>
   </div>
@@ -187,13 +187,13 @@
   <!-- Featured Games Section -->
   <div class="featured-games">Featured Games</div>
   <div class="game-images">
-    <a href="https://jacksonplayzskibidiriss.github.io/1v1.lol" target="_blank">
+    <a href="https://freeunblockedgames2.github.io/1v1.lol" target="_blank">
       <img src="https://gcdnb.pbrd.co/images/pedJf1uM7Oe3.jpg" alt="1v1 Lol">
     </a>
-    <a href="https://jacksonplayzskibidiriss.github.io/drivemad" target="_blank">
+    <a href="https://freeunblockedgames2.github.io/drivemad" target="_blank">
       <img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg" alt="Drive Mad">
     </a>
-    <a href="https://jacksonplayzskibidiriss.github.io/boxingrandom" target="_blank">
+    <a href="https://freeunblockedgames2.github.io/boxingrandom" target="_blank">
       <img src="https://gcdnb.pbrd.co/images/IzXAqJC0SJd4.png" alt="Boxing Random">
     </a>
   </div>
@@ -210,8 +210,45 @@
     function searchElite() {
       const query = document.getElementById('searchInput').value.trim();
       if (query !== '') {
-        const url = 'https://sites.google.com/search/unblockedgamesforschools?query=' + encodeURIComponent(query);
-        window.open(url, '_blank');
+        // Game search database - maps keywords to game URLs
+        const gameDatabase = {
+          '1v1': 'https://freeunblockedgames2.github.io/1v1.lol',
+          'lol': 'https://freeunblockedgames2.github.io/1v1.lol',
+          'boxing': 'https://freeunblockedgames2.github.io/boxingrandom',
+          'fight': 'https://freeunblockedgames2.github.io/boxingrandom',
+          'drive mad': 'https://freeunblockedgames2.github.io/drivemad',
+          'drive': 'https://freeunblockedgames2.github.io/drivemad',
+          'mad': 'https://freeunblockedgames2.github.io/drivemad',
+          'mario': 'https://freeunblockedgames2.github.io/mario',
+          'kart': 'https://freeunblockedgames2.github.io/mario',
+          'retro bowl': 'https://freeunblockedgames2.github.io/retrobowl',
+          'football': 'https://freeunblockedgames2.github.io/retrobowl',
+          'eaglercraft': 'https://freeunblockedgames2.github.io/eaglercraft',
+          'minecraft': 'https://freeunblockedgames2.github.io/eaglercraft',
+          'craft': 'https://freeunblockedgames2.github.io/eaglercraft'
+        };
+        
+        const lowerQuery = query.toLowerCase();
+        let foundGame = null;
+        
+        // Check if query matches any game keywords
+        for (const [keyword, gameUrl] of Object.entries(gameDatabase)) {
+          if (lowerQuery.includes(keyword)) {
+            foundGame = gameUrl;
+            break;
+          }
+        }
+        
+        if (foundGame) {
+          // Redirect to the specific game
+          window.open(foundGame, '_blank');
+        } else {
+          // If no match found, redirect to main page
+          window.open('https://freeunblockedgames2.github.io/', '_blank');
+        }
+        
+        // Clear search input
+        document.getElementById('searchInput').value = '';
       }
     }
     
