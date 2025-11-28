@@ -218,6 +218,13 @@
             border: none;
             border-radius: 10px;
             box-shadow: 0 0 30px rgba(0, 0, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .iframe-container.fullscreen iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
         }
 
         .iframe-container .close-button {
@@ -232,10 +239,40 @@
             border-radius: 5px;
             cursor: pointer;
             font-family: 'Arial Black', sans-serif;
+            z-index: 1001;
         }
 
         .iframe-container .close-button:hover {
             background-color: #cc0000;
+        }
+
+        .iframe-container .fullscreen-button {
+            position: absolute;
+            top: 20px;
+            right: 140px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00f;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Arial Black', sans-serif;
+            animation: neonGlowBlueButton 2s ease-in-out infinite alternate;
+            z-index: 1001;
+        }
+
+        @keyframes neonGlowBlueButton {
+            from {
+                box-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f;
+            }
+            to {
+                box-shadow: 0 0 10px #fff, 0 0 25px #00f, 0 0 50px #00f;
+            }
+        }
+
+        .iframe-container .fullscreen-button:hover {
+            background-color: #007bff;
         }
 
         .footer {
@@ -337,6 +374,7 @@
 
     <div class="iframe-container" id="iframeContainer">
         <button class="close-button" onclick="closeGame()">Close</button>
+        <button class="fullscreen-button" onclick="toggleGameFullscreen()">Fullscreen</button>
         <iframe id="gameIframe" src=""></iframe>
     </div>
 
@@ -398,29 +436,52 @@
         function playGame(url) {
             document.getElementById('gameIframe').src = url;
             document.getElementById('iframeContainer').style.display = 'flex';
+            // Reset fullscreen state when opening new game
+            document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
         function closeGame() {
             document.getElementById('gameIframe').src = '';
             document.getElementById('iframeContainer').style.display = 'none';
+            // Reset fullscreen state when closing game
+            document.getElementById('iframeContainer').classList.remove('fullscreen');
+        }
+
+        // Game fullscreen functionality
+        function toggleGameFullscreen() {
+            const iframeContainer = document.getElementById('iframeContainer');
+            iframeContainer.classList.toggle('fullscreen');
+            
+            const fullscreenButton = document.querySelector('.fullscreen-button');
+            if (iframeContainer.classList.contains('fullscreen')) {
+                fullscreenButton.textContent = 'Exit Fullscreen';
+            } else {
+                fullscreenButton.textContent = 'Fullscreen';
+            }
         }
 
         // Contact Us functionality
         function openContactUs() {
-            document.getElementById('gameIframe').src = 'https://freeunblockedgames2.github.io/contactus';
+            document.getElementById('gameIframe').src = 'https://freeunblockedgames2.github.io/contact_us';
             document.getElementById('iframeContainer').style.display = 'flex';
+            // Reset fullscreen state when opening contact us
+            document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
         // Chat Room functionality
         function openChatRoom() {
             document.getElementById('gameIframe').src = 'https://freeunblockedgames2.github.io/chatroom';
             document.getElementById('iframeContainer').style.display = 'flex';
+            // Reset fullscreen state when opening chat room
+            document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
         // Form functionality
         function openForm() {
             document.getElementById('gameIframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true';
             document.getElementById('iframeContainer').style.display = 'flex';
+            // Reset fullscreen state when opening form
+            document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
         // Starfield animation
