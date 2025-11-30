@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Unbl*cked Games</title>
+    <title>Free Unblocked Games</title>
     <link rel="icon" type="image/x-icon" href="https://gcdnb.pbrd.co/images/1cFGsWokSVvb.jpg?o=1">
     <style>
         /* Loading Screen Styles */
@@ -26,19 +26,19 @@
             height: 200px;
             margin-bottom: 30px;
             border-radius: 20px;
-            border: 3px solid #00f;
-            box-shadow: 0 0 30px rgba(0, 0, 255, 0.7);
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 30px var(--accent-glow);
             animation: logoPulse 2s ease-in-out infinite alternate;
         }
 
         @keyframes logoPulse {
             from {
                 transform: scale(1);
-                box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+                box-shadow: 0 0 20px var(--accent-glow);
             }
             to {
                 transform: scale(1.1);
-                box-shadow: 0 0 40px rgba(0, 0, 255, 0.9);
+                box-shadow: 0 0 40px var(--accent-glow);
             }
         }
 
@@ -46,19 +46,19 @@
             font-size: 48px;
             font-weight: bold;
             text-transform: uppercase;
-            animation: neonGlowBlue 2s ease-in-out infinite alternate;
-            color: #00f;
+            animation: neonGlow 2s ease-in-out infinite alternate;
+            color: var(--accent-color);
             text-align: center;
             font-family: 'Arial Black', sans-serif;
             margin-bottom: 20px;
         }
 
-        @keyframes neonGlowBlue {
+        @keyframes neonGlow {
             from {
-                text-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f, 0 0 60px #00f;
+                text-shadow: 0 0 5px #fff, 0 0 15px var(--accent-color), 0 0 30px var(--accent-color), 0 0 60px var(--accent-color);
             }
             to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 40px #00f, 0 0 80px #00f;
+                text-shadow: 0 0 10px #fff, 0 0 20px var(--accent-color), 0 0 40px var(--accent-color), 0 0 80px var(--accent-color);
             }
         }
 
@@ -66,7 +66,7 @@
             width: 50px;
             height: 50px;
             border: 5px solid rgba(0, 0, 255, 0.3);
-            border-top: 5px solid #00f;
+            border-top: 5px solid var(--accent-color);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -76,16 +76,68 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Theme Variables */
+        :root {
+            --accent-color: #00f;
+            --accent-glow: rgba(0, 0, 255, 0.7);
+            --card-bg: rgba(44, 44, 44, 0.8);
+            --text-color: #ffffff;
+        }
+
         body {
             margin: 0;
             font-family: 'Arial Black', sans-serif;
             background: url('https://gcdnb.pbrd.co/images/ZkCX8Y8SExuR.jpg?o=1') no-repeat center center fixed;
             background-size: cover;
-            color: #ffffff;
+            color: var(--text-color);
             overflow-x: hidden;
             min-height: 100vh;
             padding: 0;
             box-sizing: border-box;
+            transition: all 0.5s ease;
+        }
+
+        /* Theme Backgrounds */
+        body.theme-blue {
+            --accent-color: #00f;
+            --accent-glow: rgba(0, 0, 255, 0.7);
+            background: url('https://gcdnb.pbrd.co/images/ZkCX8Y8SExuR.jpg?o=1') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body.theme-red {
+            --accent-color: #ff0000;
+            --accent-glow: rgba(255, 0, 0, 0.7);
+            background: url('https://scitechdaily.com/images/Gas-Shroud-Starburst-Galaxy-IRAS-08339-6517-scaled.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body.theme-green {
+            --accent-color: #00ff00;
+            --accent-glow: rgba(0, 255, 0, 0.7);
+            background: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body.theme-purple {
+            --accent-color: #8a2be2;
+            --accent-glow: rgba(138, 43, 226, 0.7);
+            background: url('https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body.theme-orange {
+            --accent-color: #ff8c00;
+            --accent-glow: rgba(255, 140, 0, 0.7);
+            background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body.theme-cyber {
+            --accent-color: #00ffff;
+            --accent-glow: rgba(0, 255, 255, 0.7);
+            background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+            background-size: cover;
         }
 
         #starfield {
@@ -103,8 +155,7 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            background-color: rgba(51, 51, 51, 0.8);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background: transparent;
             position: relative;
         }
 
@@ -112,31 +163,33 @@
             font-size: 48px;
             font-weight: bold;
             text-transform: uppercase;
-            animation: neonGlowBlue 2s ease-in-out infinite alternate;
-            color: #00f;
+            animation: neonGlow 2s ease-in-out infinite alternate;
+            color: var(--accent-color);
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 0 0 10px var(--accent-glow);
         }
 
         .search-container {
             display: flex;
             align-items: center;
-            background: none;
-            border: 2px solid #00f;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--accent-color);
             padding: 10px 20px;
             border-radius: 50px;
-            animation: neonGlowBlueInput 2s ease-in-out infinite alternate;
+            animation: neonGlowInput 2s ease-in-out infinite alternate;
             margin-bottom: 20px;
             width: 80%;
             max-width: 500px;
+            backdrop-filter: blur(10px);
         }
 
-        @keyframes neonGlowBlueInput {
+        @keyframes neonGlowInput {
             from {
-                box-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f;
+                box-shadow: 0 0 5px #fff, 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
             }
             to {
-                box-shadow: 0 0 10px #fff, 0 0 25px #00f, 0 0 50px #00f;
+                box-shadow: 0 0 10px #fff, 0 0 25px var(--accent-color), 0 0 50px var(--accent-color);
             }
         }
 
@@ -144,7 +197,7 @@
             background: transparent;
             border: none;
             outline: none;
-            color: #ffffff;
+            color: var(--text-color);
             font-size: 18px;
             width: 100%;
             font-family: 'Arial Black', sans-serif;
@@ -152,7 +205,7 @@
         }
 
         .search-container input::placeholder {
-            color: #ccccff;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .mindfind {
@@ -172,15 +225,6 @@
             fill: none;
         }
 
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-            transition: background-color 5000s ease-in-out 0s;
-            -webkit-text-fill-color: white !important;
-            box-shadow: 0 0 0px 1000px transparent inset !important;
-        }
-
         .button-container {
             display: flex;
             flex-wrap: wrap;
@@ -192,19 +236,54 @@
         .btn {
             margin: 5px;
             padding: 12px 25px;
-            background-color: #00f;
+            background: linear-gradient(135deg, var(--accent-color), #007bff);
             color: white;
             font-size: 16px;
             text-transform: uppercase;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
             font-family: 'Arial Black', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
-            background-color: #007bff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-btn {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--accent-color);
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Arial Black', sans-serif;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-btn:hover {
+            background: var(--accent-color);
             transform: scale(1.05);
         }
 
@@ -214,18 +293,20 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: #00f;
+            background: linear-gradient(135deg, var(--accent-color), #007bff);
             border: none;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: neonGlowBlueButton 2s ease-in-out infinite alternate;
+            animation: neonGlowButton 2s ease-in-out infinite alternate;
             font-size: 24px;
             color: white;
             font-weight: bold;
             padding: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .settings-button img {
@@ -234,18 +315,17 @@
             filter: brightness(0) invert(1);
         }
 
-        @keyframes neonGlowBlueButton {
+        @keyframes neonGlowButton {
             from {
-                box-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f;
+                box-shadow: 0 0 5px #fff, 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
             }
             to {
-                box-shadow: 0 0 10px #fff, 0 0 25px #00f, 0 0 50px #00f;
+                box-shadow: 0 0 10px #fff, 0 0 25px var(--accent-color), 0 0 50px var(--accent-color);
             }
         }
 
         .settings-button:hover {
-            background-color: #007bff;
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(90deg);
         }
 
         .card-container {
@@ -257,19 +337,32 @@
         }
 
         .card {
-            background-color: rgba(44, 44, 44, 0.8);
-            border-radius: 10px;
+            background: rgba(44, 44, 44, 0.9);
+            border-radius: 15px;
             width: 220px;
             padding: 15px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid #00f;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), #007bff);
         }
 
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px var(--accent-glow);
         }
 
         .card img {
@@ -277,7 +370,7 @@
             height: 150px;
             object-fit: cover;
             border-radius: 8px;
-            border: 1px solid #00f;
+            border: 1px solid var(--accent-color);
         }
 
         .card h2 {
@@ -289,17 +382,19 @@
         .card button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #007bff;
+            background: linear-gradient(135deg, var(--accent-color), #007bff);
             color: #ffffff;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
             font-family: 'Arial Black', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .card button:hover {
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .iframe-container {
@@ -320,7 +415,7 @@
             height: 80%;
             border: none;
             border-radius: 10px;
-            box-shadow: 0 0 30px rgba(0, 0, 255, 0.5);
+            box-shadow: 0 0 30px var(--accent-glow);
             transition: all 0.3s ease;
         }
 
@@ -336,19 +431,20 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: #00f;
+            background: linear-gradient(135deg, var(--accent-color), #007bff);
             color: #ffffff;
             border: none;
             border-radius: 50%;
             cursor: pointer;
             font-family: 'Arial Black', sans-serif;
             z-index: 1001;
-            transition: opacity 0.3s ease;
-            animation: neonGlowBlueButton 2s ease-in-out infinite alternate;
+            transition: all 0.3s ease;
+            animation: neonGlowButton 2s ease-in-out infinite alternate;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .iframe-container .close-button img {
@@ -357,7 +453,7 @@
         }
 
         .iframe-container .close-button:hover {
-            background-color: #007bff;
+            transform: scale(1.1);
         }
 
         .iframe-container .fullscreen-button {
@@ -366,18 +462,19 @@
             right: 90px;
             width: 50px;
             height: 50px;
-            background-color: #00f;
+            background: linear-gradient(135deg, var(--accent-color), #007bff);
             border: none;
             border-radius: 50%;
             cursor: pointer;
             font-family: 'Arial Black', sans-serif;
-            animation: neonGlowBlueButton 2s ease-in-out infinite alternate;
+            animation: neonGlowButton 2s ease-in-out infinite alternate;
             z-index: 1001;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .iframe-container .fullscreen-button img {
@@ -387,14 +484,7 @@
         }
 
         .iframe-container .fullscreen-button:hover {
-            background-color: #007bff;
-        }
-
-        /* Hide buttons when in fullscreen */
-        .iframe-container.fullscreen .close-button,
-        .iframe-container.fullscreen .fullscreen-button {
-            opacity: 0;
-            pointer-events: none;
+            transform: scale(1.1);
         }
 
         /* Settings Modal */
@@ -412,13 +502,14 @@
         }
 
         .settings-content {
-            background-color: rgba(44, 44, 44, 0.95);
+            background: rgba(44, 44, 44, 0.95);
             padding: 30px;
             border-radius: 15px;
             width: 90%;
             max-width: 500px;
-            border: 3px solid #00f;
-            box-shadow: 0 0 30px rgba(0, 0, 255, 0.7);
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 30px var(--accent-glow);
+            backdrop-filter: blur(10px);
         }
 
         .settings-header {
@@ -426,14 +517,14 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #00f;
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 10px;
         }
 
         .settings-title {
             font-size: 28px;
-            color: #00f;
-            text-shadow: 0 0 10px #00f;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-glow);
             margin: 0;
         }
 
@@ -444,10 +535,12 @@
             font-size: 24px;
             cursor: pointer;
             padding: 5px 10px;
+            transition: color 0.3s ease;
         }
 
         .close-settings:hover {
             color: #ff0000;
+            transform: scale(1.1);
         }
 
         .tab-cloak-section {
@@ -456,9 +549,9 @@
 
         .section-title {
             font-size: 20px;
-            color: #00f;
+            color: var(--accent-color);
             margin-bottom: 15px;
-            text-shadow: 0 0 5px #00f;
+            text-shadow: 0 0 5px var(--accent-glow);
         }
 
         .cloak-input-group {
@@ -476,39 +569,42 @@
             width: 100%;
             padding: 12px;
             background: rgba(0, 0, 0, 0.7);
-            border: 2px solid #00f;
+            border: 2px solid var(--accent-color);
             border-radius: 8px;
             color: #fff;
             font-size: 16px;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         .cloak-input:focus {
             outline: none;
-            box-shadow: 0 0 10px #00f;
+            box-shadow: 0 0 10px var(--accent-color);
         }
 
         .cloak-button {
             width: 100%;
             padding: 12px;
-            background-color: #00f;
+            background: linear-gradient(135deg, var(--accent-color), #007bff);
             color: white;
             border: none;
             border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
             font-family: 'Arial Black', sans-serif;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .cloak-button:hover {
-            background-color: #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .reset-cloak {
             width: 100%;
             padding: 10px;
-            background-color: #ff4444;
+            background: linear-gradient(135deg, #ff4444, #cc0000);
             color: white;
             border: none;
             border-radius: 8px;
@@ -516,22 +612,36 @@
             cursor: pointer;
             font-family: 'Arial Black', sans-serif;
             margin-top: 10px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .reset-cloak:hover {
-            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-selector {
+            margin-bottom: 25px;
+        }
+
+        .theme-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .footer {
             margin-top: 50px;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7);
             color: #ccc;
             font-size: 14px;
             text-align: center;
             width: 100%;
             box-sizing: border-box;
+            backdrop-filter: blur(10px);
         }
 
         .footer p {
@@ -539,12 +649,12 @@
         }
 
         .footer strong {
-            color: #00f;
+            color: var(--accent-color);
         }
     </style>
 </head>
 
-<body>
+<body class="theme-blue">
     <canvas id="starfield"></canvas>
     
     <!-- Game Loading Screen -->
@@ -555,10 +665,10 @@
     </div>
     
     <header>
-        <div class="neon-text">Free Unbl*cked Games</div>
+        <div class="neon-text">Free Unblocked Games</div>
         
         <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search Books...">
+            <input type="text" id="searchBar" placeholder="Search games...">
             <button onclick="searchGames()" class="mindfind">
                 <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
@@ -648,7 +758,7 @@
 
     <div class="iframe-container" id="iframeContainer">
         <button class="close-button" onclick="closeGame()">
-CLOSE
+            <img src="https://p1.hiclipart.com/preview/234/595/641/black-resourcesforbitches-black-x.jpg" alt="Close">
         </button>
         <button class="fullscreen-button" onclick="toggleGameFullscreen()">
             <img src="https://cdn-icons-png.flaticon.com/512/6398/6398940.png" alt="Fullscreen">
@@ -662,6 +772,18 @@ CLOSE
             <div class="settings-header">
                 <h2 class="settings-title">Settings</h2>
                 <button class="close-settings" onclick="closeSettings()">×</button>
+            </div>
+            
+            <div class="theme-selector">
+                <h3 class="section-title">Theme Selector</h3>
+                <div class="theme-buttons">
+                    <button class="theme-btn" onclick="changeTheme('blue')">Blue</button>
+                    <button class="theme-btn" onclick="changeTheme('red')">Red</button>
+                    <button class="theme-btn" onclick="changeTheme('green')">Green</button>
+                    <button class="theme-btn" onclick="changeTheme('purple')">Purple</button>
+                    <button class="theme-btn" onclick="changeTheme('orange')">Orange</button>
+                    <button class="theme-btn" onclick="changeTheme('cyber')">Cyber</button>
+                </div>
             </div>
             
             <div class="tab-cloak-section">
@@ -683,6 +805,12 @@ CLOSE
         </div>
     </div>
 
+    <div class="footer">
+        <p><strong>Coincidence is God's way of remaining anonymous</strong></p>
+        <p>Please don't tell too many people about this, this might get blocked :(</p>
+        <p>This is a website where you can play unblocked games and have fun in school. If this gets blocked, I'm making another site, okay? Now go play those games! Games you can play are:</p>
+        <p>Mario Kart, Super Circuit, 1v1.lol, Boxing, Random Eaglercraft 1.12 and 1.8, Retro Bowl, and more!</p>
+    </div>
 
     <script>
         // Search functionality
@@ -699,7 +827,6 @@ CLOSE
             });
         });
 
-        // Search button functionality
         function searchGames() {
             const searchQuery = document.getElementById('searchBar').value.toLowerCase();
             const cards = document.querySelectorAll('.card');
@@ -717,74 +844,58 @@ CLOSE
             
             if (!found) {
                 alert('No games found matching your search. Try a different keyword.');
-                // Show all cards if no match found
                 cards.forEach(card => {
                     card.style.display = 'block';
                 });
             }
         }
 
-        // Enter key support for search
         document.getElementById('searchBar').addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 searchGames();
             }
         });
 
-        // Game play functionality with loading screen
         function playGame(url) {
-            // Show loading screen
             document.getElementById('gameLoadingScreen').style.display = 'flex';
             
-            // Load game after a short delay to show loading screen
             setTimeout(function() {
                 document.getElementById('gameIframe').src = url;
                 document.getElementById('iframeContainer').style.display = 'flex';
-                // Hide loading screen
                 document.getElementById('gameLoadingScreen').style.display = 'none';
-                // Reset fullscreen state when opening new game
                 document.getElementById('iframeContainer').classList.remove('fullscreen');
-            }, 1500); // 1.5 second loading screen
+            }, 1500);
         }
 
         function closeGame() {
             document.getElementById('gameIframe').src = '';
             document.getElementById('iframeContainer').style.display = 'none';
-            // Reset fullscreen state when closing game
             document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
-        // Game fullscreen functionality
         function toggleGameFullscreen() {
             const iframeContainer = document.getElementById('iframeContainer');
             iframeContainer.classList.toggle('fullscreen');
         }
 
-        // Contact Us functionality
         function openContactUs() {
             document.getElementById('gameIframe').src = 'https://educationalgameds.github.io/contact_us';
             document.getElementById('iframeContainer').style.display = 'flex';
-            // Reset fullscreen state when opening contact us
             document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
-        // Chat Room functionality
         function openChatRoom() {
             document.getElementById('gameIframe').src = 'https://educationalgameds.github.io/chatroom';
             document.getElementById('iframeContainer').style.display = 'flex';
-            // Reset fullscreen state when opening chat room
             document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
-        // Form functionality
         function openForm() {
             document.getElementById('gameIframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true';
             document.getElementById('iframeContainer').style.display = 'flex';
-            // Reset fullscreen state when opening form
             document.getElementById('iframeContainer').classList.remove('fullscreen');
         }
 
-        // Settings functionality
         function openSettings() {
             document.getElementById('settingsModal').style.display = 'flex';
         }
@@ -793,14 +904,18 @@ CLOSE
             document.getElementById('settingsModal').style.display = 'none';
         }
 
-        // Tab Cloak functionality
+        function changeTheme(theme) {
+            document.body.className = 'theme-' + theme;
+            localStorage.setItem('selectedTheme', theme);
+            closeSettings();
+        }
+
         function applyTabCloak() {
             const title = document.getElementById('tabTitle').value;
             const icon = document.getElementById('tabIcon').value;
             
             if (title) {
                 document.title = title;
-                // Save to localStorage
                 localStorage.setItem('cloakedTitle', title);
             }
             
@@ -810,7 +925,6 @@ CLOSE
                 link.rel = 'shortcut icon';
                 link.href = icon;
                 document.head.appendChild(link);
-                // Save to localStorage
                 localStorage.setItem('cloakedIcon', icon);
             }
             
@@ -824,25 +938,25 @@ CLOSE
 
         function resetTabCloak() {
             document.title = 'Free Unblocked Games';
-            // Reset to default favicon
             const link = document.querySelector("link[rel*='icon']");
             if (link) {
                 link.href = 'https://gcdnb.pbrd.co/images/1cFGsWokSVvb.jpg?o=1';
             }
             
-            // Clear localStorage
             localStorage.removeItem('cloakedTitle');
             localStorage.removeItem('cloakedIcon');
             
-            // Clear input fields
             document.getElementById('tabTitle').value = '';
             document.getElementById('tabIcon').value = '';
             
             alert('Tab cloak reset to default!');
         }
 
-        // Load saved cloak settings on page load
+        // Load saved settings
         window.addEventListener('load', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'blue';
+            changeTheme(savedTheme);
+            
             const savedTitle = localStorage.getItem('cloakedTitle');
             const savedIcon = localStorage.getItem('cloakedIcon');
             
