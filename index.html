@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Unblocked Games</title>
+    <title>Free Unbl*cked Games</title>
     <link rel="icon" type="image/x-icon" href="https://gcdnb.pbrd.co/images/1cFGsWokSVvb.jpg?o=1">
     <style>
         /* Loading Screen Styles */
@@ -225,6 +225,13 @@
             font-size: 24px;
             color: white;
             font-weight: bold;
+            padding: 0;
+        }
+
+        .settings-button img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
         }
 
         @keyframes neonGlowBlueButton {
@@ -341,7 +348,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            padding: 0;
+        }
+
+        .iframe-container .close-button img {
+            width: 30px;
+            height: 30px;
         }
 
         .iframe-container .close-button:hover {
@@ -543,10 +555,10 @@
     </div>
     
     <header>
-        <div class="neon-text">Free Unblocked Games</div>
+        <div class="neon-text">Free Unbl*cked Games</div>
         
         <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search games...">
+            <input type="text" id="searchBar" placeholder="Search Books...">
             <button onclick="searchGames()" class="mindfind">
                 <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
@@ -561,10 +573,17 @@
             <button class="btn" onclick="window.open('https://discord.gg/xFMpuKBFr8', '_blank')">Join Our Discord</button>
         </div>
         
-        <button class="settings-button" onclick="openSettings()">⚙️</button>
+        <button class="settings-button" onclick="openSettings()">
+            <img src="https://gn-math.github.io/setting.png" alt="Settings">
+        </button>
     </header>
     
     <div class="card-container" id="cardContainer">
+        <div class="card" data-title="Angry Birds">
+            <img src="https://static.wikia.nocookie.net/angrybirds/images/7/70/AngryBirds_Classic_GameIcon_Vector_2.png/revision/latest/scale-to-width-down/250" alt="Angry Birds">
+            <h2>Angry Birds</h2>
+            <button onclick="playGame('https://educationalgameds.github.io/angrybirds')">Play</button>
+        </div>
         <div class="card" data-title="PolyTrack">
             <img src="https://www.kizgame.com/thumbs/polytrack_small.webp" alt="PolyTrack">
             <h2>PolyTrack</h2>
@@ -628,7 +647,9 @@
     </div>
 
     <div class="iframe-container" id="iframeContainer">
-        <button class="close-button" onclick="closeGame()">❌</button>
+        <button class="close-button" onclick="closeGame()">
+CLOSE
+        </button>
         <button class="fullscreen-button" onclick="toggleGameFullscreen()">
             <img src="https://cdn-icons-png.flaticon.com/512/6398/6398940.png" alt="Fullscreen">
         </button>
@@ -662,12 +683,6 @@
         </div>
     </div>
 
-    <div class="footer">
-        <p><strong>Coincidence is God's way of remaining anonymous</strong></p>
-        <p>Please don't tell too many people about this, this might get blocked :(</p>
-        <p>This is a website where you can play unblocked games and have fun in school. If this gets blocked, I'm making another site, okay? Now go play those games! Games you can play are:</p>
-        <p>Mario Kart, Super Circuit, 1v1.lol, Boxing, Random Eaglercraft 1.12 and 1.8, Retro Bowl, and more!</p>
-    </div>
 
     <script>
         // Search functionality
